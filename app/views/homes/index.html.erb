@@ -1,0 +1,14 @@
+<%= render 'shared/nav' %>
+
+<% @two_wheeler.each do |bike| %>
+<div class="gallery">
+  <a target="_blank" href="img_5terre.jpg">
+    <%= link_to image_tag bike.photos.first.try(:image).try(:url), class: 'card-img-top', target: '_blank' %>
+  </a>
+  <div class="desc"><%= bike.title %></div>
+  <div class="desc"><%= bike.description %></div>
+  <div class="desc"><%= bike.price %></div>
+  <%= link_to 'Remove', bike_path(bike), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>
+<% end %>
+
