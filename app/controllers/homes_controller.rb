@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
   def index
-  	@two_wheeler = TwoWheeler.includes(:photos)
+  	@two_wheelers = TwoWheeler.includes(:photos)
   end
 end
